@@ -7,6 +7,7 @@ import os
 from django.conf import settings
 from models import PicTest, Areas
 from django.core.paginator import Paginator
+from django.core.mail import send_mail
 # Create your views here.
 
 def index(request):
@@ -93,5 +94,22 @@ def rich_show(request):
 
 def query(request):
     return render(request,'booktest/query.html')
+
+def mail_test(request):
+    send_mail('注册激活','',
+              settings.EMAIL_FROM,
+              ['zh358631330@163.com'],
+              html_message='<a href="#">点击激活</a>')
+    return HttpResponse('邮箱确认信息已发送,请确认')
+
+
+
+
+
+
+
+
+
+
 
 
