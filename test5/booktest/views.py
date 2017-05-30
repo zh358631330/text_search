@@ -8,6 +8,7 @@ from django.conf import settings
 from models import PicTest, Areas
 from django.core.paginator import Paginator
 from django.core.mail import send_mail
+import time
 # Create your views here.
 
 def index(request):
@@ -101,9 +102,13 @@ def mail_test(request):
               ['zh358631330@163.com'],
               html_message='<a href="#">点击激活</a>')
     return HttpResponse('邮箱确认信息已发送,请确认')
-
-
-
+import task
+def sayhello(request):
+    # print 'hello'
+    # time.sleep(4)
+    # print 'world'
+    task.task1.delay()
+    return HttpResponse('ok')
 
 
 

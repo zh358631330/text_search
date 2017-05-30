@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'booktest',
     'tinymce',
     'haystack',
+    'djcelery',
 
 
 )
@@ -135,7 +136,10 @@ EMAIL_HOST_USER = 'zh358631330@163.com'
 EMAIL_HOST_PASSWORD = 'ning358631330'
 EMAIL_FROM = 'python<zh358631330@163.com>'
 
-
+import djcelery
+djcelery.setup_loader()
+BROKER_URL = 'redis://127.0.0.1:6379/2'
+CELERY_IMPORTS = ('booktest.task')
 
 
 

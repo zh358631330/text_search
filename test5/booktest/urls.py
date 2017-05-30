@@ -15,5 +15,6 @@ urlpatterns=[
     url('^rich_show/$',views.rich_show),
     url('^query/$', views.query),
     url('^mail_test/$',views.mail_test),
+    url('^sayhello/$', views.sayhello),
 
 ]
