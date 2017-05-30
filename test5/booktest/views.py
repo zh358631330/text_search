@@ -77,4 +77,11 @@ def page_test(request,pIndex):
     #将当前页码、当前页的数据、页码信息传递到模板中
     return render(request, 'booktest/page_test.html', {'list': list2, 'plist': plist, 'pIndex': pIndex})
 
+def rich(request):
+    return render(request,'booktest/rich.html')
 
+def rich_handle(request):
+    goods = GoodsInfo()
+    goods.gcontent=request.POST.get('rich')
+    goods.save()
+    return HttpResponse('ok')

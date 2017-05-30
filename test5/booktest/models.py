@@ -9,7 +9,7 @@
 # into your database.
 from __future__ import unicode_literals
 from django.db import models
-
+from tinymce.models import HTMLField
 
 class Areas(models.Model):
     aid = models.IntegerField(primary_key=True)
@@ -22,4 +22,8 @@ class Areas(models.Model):
 
 class PicTest(models.Model):
     pic = models.ImageField(upload_to='booktest/')
+
+class GoodsInfo(models.Model):
+    gcontent=HTMLField()
+
 

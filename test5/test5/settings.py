@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'booktest',
+    'tinymce',
 
 )
 
@@ -110,3 +111,9 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static')
 ]
 MEDIA_ROOT=os.path.join(BASE_DIR,'booktest/static/media')
+
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',
+    'width': 600,
+    'height': 400,
+}
