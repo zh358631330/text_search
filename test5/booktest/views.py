@@ -85,3 +85,13 @@ def rich_handle(request):
     goods.gcontent=request.POST.get('rich')
     goods.save()
     return HttpResponse('ok')
+
+def rich_show(request):
+    goods = GoodsInfo.objects.get(pk=1)
+    context={'goods':goods}
+    return render(request,'booktest/rich_show.html',context)
+
+def query(request):
+    return render(request,'booktest/query.html')
+
+

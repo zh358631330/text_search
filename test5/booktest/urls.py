@@ -11,5 +11,7 @@ urlpatterns=[
     url('^pic_show/$',views.pic_show),
     url(r'^page(?P<pIndex>[0-9]*)/$', views.page_test),
     url('^rich/$',views.rich),
-    url('^rich_handle/$',views.rich_handle)
+    url('^rich_handle/$',views.rich_handle),
+    url('^rich_show/$',views.rich_show),
+    url('^query/$',views.query),
 ]
