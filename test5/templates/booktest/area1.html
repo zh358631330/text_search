@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $.get('/area2/',function (data) {
+                sheng=$('#sheng');
+                $.each(data.sheng,function (i,n) {
+                    sheng.append('<option value="'+n[0]+'"> '+n[1] +'</option>')
+                });
+            });
+            $('#sheng').change(function(){
+                $.get('/area3/', {'pid':$(this).val()}, function (data) {
+                    shi=$('#shi');
+                    shi.empty().append('<option value="0">请选择市</option>');
+                    $('#qu').empty().append('<option value="0">请选择区</option>')
+                    $.each(data.resault,function(i,n){
+                        shi.append('<option value="'+n["id"]+'">'+n["title"]+'</option>');
+                    });
+                });
+            });
+            $('#shi').change(function(){
+                $.get('/area3/', {'pid':$(this).val()}, function (data) {
+                    $('#qu').empty().append('<option value="0">请选择区</option>')
+                    $.each(data.resault,function(i,n){
+                        $('#qu').append('<option value="'+n["id"]+'">'+n["title"]+'</option>');
+                    });
+                });
+            });
+
+        })
+    </script>
+</head>
+<body>
+<select id="sheng">
+    <option value="0">请选择省</option>
+</select>
+<select id="shi">
+    <option value="0">请选择市</option>
+</select>
+<select id="qu">
+    <option value="0">请选择区</option>
+</select>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

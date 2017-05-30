@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%for area in list%}
+<li>{{area.aid}}--{{area.atitle}}</li>
+{%endfor%}
+</ul>
+<hr>
+显示页码信息：当前页码没有链接，其它页码有链接<br>
+{%for pindex in plist%}
+    {%if pIndex == pindex%}
+        {{pindex}}&nbsp;&nbsp;
+    {%else%}
+        <a href="/page{{pindex}}/">{{pindex}}</a>&nbsp;&nbsp;
+    {%endif%}
+{%endfor%}
+<hr>
+
+</body>
+</html>
