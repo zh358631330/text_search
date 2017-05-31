@@ -12,7 +12,7 @@ import time
 # Create your views here.
 
 def index(request):
-    return HttpResponse('hello')
+    return render(request,'booktest/index.html')
 
 
 def jingtai(request):

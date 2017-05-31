@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%j&0gbi8ezhhr^r^8=4pv8$z&5k&e9_#zlaf+jf+0f@#2o2w&g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -108,12 +108,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static')
 ]
-MEDIA_ROOT=os.path.join(BASE_DIR,'booktest/static/media')
+STATIC_ROOT='/var/www/test5/static/'
+
+MEDIA_ROOT=os.path.join(BASE_DIR,'static/media')
 
 TINYMCE_DEFAULT_CONFIG = {
     'theme': 'advanced',
